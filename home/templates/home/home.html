@@ -1,8 +1,13 @@
 {% extends 'home/base.html' %}
 {% block content %}
-<div class="container">
+<div class="container"id="search-form">
     <h1>Welcome!</h1>
-    {{form.as_p}}
-    <button type="submit" class="btn"> Search </button>
+    <div>
+        <form method="POST">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit" class="btn"> Search </button>
+        </form>
+    </div>
 </div>
 {% endblock %}

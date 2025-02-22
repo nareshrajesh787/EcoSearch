@@ -1,0 +1,13 @@
+{% extends 'home/base.html' %}
+{% block content %}
+<div class="container">
+    <h1>EcoSearch</h1>
+    <form>
+        <div class="form-group">
+            <label for="search-input">Search</label>
+            <input type="text" class="form-control" id="search-input" placeholder="Enter your search query">
+            {{form.address|as_crispy_field}}
+        </div>
+    </form>
+</div>
+{% endblock %}

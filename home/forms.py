@@ -8,7 +8,6 @@ class homeForm(forms.Form):
     ("3" ," Temperature")
   ]
 
-  
   address = forms.CharField(
     label="Enter your address here...",
     required=True,

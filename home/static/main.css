@@ -369,18 +369,3 @@ transform: translateY(-3px);
   background-color: var(--background);
   border-color: var(--primary);
 }
-
-.navbar .btn-about {
-  background-color: var(--accent);
-  color: var(--text);
-  font-weight: bold;
-  padding: 8px 16px;
-  border-radius: 20px;
-  transition: all 0.3s ease-in-out;
-}
-
-.navbar .btn-about:hover {
-  background-color: #e0ac3b;
-  transform: scale(1.1);
-  color: var(--white);
-}
