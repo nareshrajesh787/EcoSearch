@@ -1,12 +1,14 @@
 {% extends 'home/base.html' %}
 {% block content %}
-<div class="container"id="search-form">
-    <h1>Welcome!</h1>
-    <div>
-        <form method="POST">
-        {% csrf_token %}
-        {{form}}
-        <button type="submit" class="btn"> Search </button>
+<div class="container text-center mt-5" id="search-form">
+    <h1 class="title">EcoSearch</h1>
+    <p class="subtitle">Find eco-friendly solutions in your area</p>
+    
+    <div class="form-container">
+        <form method="POST" class="search-form">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" class="btn"> Search </button>
         </form>
     </div>
 </div>

@@ -1,12 +1,10 @@
 {% extends 'home/base.html' %}
+{% load static %}
 {% block content %}
-<div class="container"id="search-form">
-    <h1>Results!</h1>
-    <div>
-        {% csrf_token %}
-        <p> {{content}}</p>
-        <p> Longitude: {{content.longitude}}</p>
-        <p> Latitude: {{content.latitude}}</p>
-    </div>
+<div class="results-container">
+    <h1>Weather Forecast</h1>
+    <h2 class="serif-font">Daily Forecast</h2>
+
+    <img src="{% static 'temperature_plot.png' %}" alt="Hourly Temperature Graph">
 </div>
 {% endblock %}

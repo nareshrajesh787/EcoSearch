@@ -21,6 +21,5 @@ from home import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('results/', views.graph_page, name="results"),
-    path('home/', views.homeV2, name='homeV2')
+    path('results/', views.home, name="results"),
 ]

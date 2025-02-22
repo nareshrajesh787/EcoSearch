@@ -3,9 +3,11 @@ from django import forms
 
 class homeForm(forms.Form):
   CHOICES = [
-    ("1", "Ocean"),
-    ("2", "Air Quality"),
-    ("3" ," Temperature")
+    ("1", "Precipitation Probability"),
+    ("2", "Sunlight Exposure"),
+    ("3" ," Temperature"),
+    ("4", "Wind Speeds"),
+    ("5", "Snowfall")
   ]
 
   address = forms.CharField(
