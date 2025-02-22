@@ -4,6 +4,10 @@ from geopy.geocoders import Nominatim
 
 from .forms import homeForm
 
+import openmeteo_requests
+import requests_cache
+import pandas as pd
+from retry_requests import retry
 
 # Create your views here.
 def home(request):
@@ -20,6 +24,14 @@ def home(request):
 
       location = geolocator.geocode(address)
       print(location.latitude, location.longitude)
+
+      url = "https://api.open-meteo.com/v1/forecast"
+      params = {
+        "latitude": location.latitude,
+        "longitude": location.longitude,
+        "hourly": "temperature_2m"
+      }
+      responses = openmeteo.weather_api(url, params=params)
 
       return render(request, "results/results.html", {"content": location})
       #add code to convert url to coordinates

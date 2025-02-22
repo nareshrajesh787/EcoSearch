@@ -14,6 +14,7 @@ class homeForm(forms.Form):
     widget=forms.TextInput(attrs={"class": "form-control"})
   )
   data_type = forms.ChoiceField(
+    label="Select a data type...",
     widget=forms.RadioSelect(),
     required=True,
     choices = CHOICES

@@ -5,9 +5,17 @@
     <h1>EcoSearch</h1>
     <form>
         <div class="form-group">
-            <label for="search-input">Search</label>
-            <input type="text" class="form-control" id="search-input" placeholder="Enter your search query">
-            {{form.address|as_crispy_field}}
+            <div class="row">
+                {% csrf_token %}
+                {{form.address|as_crispy_field}}
+            </div>
+            <div class="row">
+                {% csrf_token %}
+                {{form.data_type|as_crispy_field}}
+            </div>
+            <div>
+                <button type="submit" class="btn"> Search </button>
+            </div>
         </div>
     </form>
 </div>
