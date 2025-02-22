@@ -1,8 +1,7 @@
 from django import forms
-from django.forms.widgets import Widget
 
 
-class homeForm(forms.ModelForm):
+class homeForm(forms.Form):
   CHOICES = [
     ("1", "Ocean"),
     ("2", "Air Quality"),
@@ -16,7 +15,8 @@ class homeForm(forms.ModelForm):
     widget=forms.TextInput(attrs={"class": "form-control"})
   )
   data_type = forms.ChoiceField(
-     widget=forms.RadioSelect(),
+    widget=forms.RadioSelect(),
+    required=True,
     choices = CHOICES
   )
   
