@@ -139,22 +139,6 @@ body {
     max-width: 500px;
 }
 
-/* Radio buttons styling */
-div[id^="div_id_data_type"] .form-check {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-}
-
-div[id^="div_id_data_type"] input[type="radio"] {
-    margin: 0;
-}
-
-div[id^="div_id_data_type"] label {
-    margin: 0;
-}
-
 .search-form {
     display: flex;
     flex-direction: column;
@@ -164,7 +148,7 @@ div[id^="div_id_data_type"] label {
 
 #div_id_type label {
   display: flex;
-  flex-direction: row;
+  flex-direction
 }
 
 /* Input Box */
