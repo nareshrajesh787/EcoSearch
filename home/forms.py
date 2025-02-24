@@ -11,13 +11,13 @@ class homeForm(forms.Form):
   ]
 
   address = forms.CharField(
-    label="Enter your address here...",
+    label="Enter a Location to Analyze",
     required=True,
     widget=forms.TextInput(attrs={"class": "form-control"})
   )
   data_type = forms.ChoiceField(
-    label="Select a data type...",
-    widget=forms.RadioSelect(),
+    label="Select Which Factors to Analyze",
+    widget=forms.Select(),
     required=True,
     choices = CHOICES
   )

@@ -11,7 +11,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
-# Create your views here.
 def home(request):
   def make_graph(id):
     """
@@ -36,7 +35,6 @@ def home(request):
     print(f"Timezone {response.Timezone()} {response.TimezoneAbbreviation()}")
     print(f"Timezone difference to GMT+0 {response.UtcOffsetSeconds()} s")
 
-    # Process hourly data. The order of variables needs to be the same as requested.
     hourly = response.Hourly()
     hourly_temperature_2m = hourly.Variables(0).ValuesAsNumpy()
 

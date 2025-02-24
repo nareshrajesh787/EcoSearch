@@ -1,13 +1,17 @@
 {% extends 'home/base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
-<div class="container text-center mt-5" id="search-form">
-    <h1 class="title">EcoSearch</h1>
-    <p class="subtitle">Find eco-friendly solutions in your area</p>
+<div class="container text-center" id="search-form">
+    <h1 class="title"> <i class="fas fa-leaf"></i> EcoSearch</h1>
+    <p class="subtitle">Find <strong>KEY</strong> environmental factors in <strong>YOUR</strong> area</p>
     
     <div class="form-container">
         <form method="POST" class="search-form">
             {% csrf_token %}
-            {{ form }}
+            <i class="fas fa-map-marker-alt"></i>
+            {{ form.address|as_crispy_field }}
+            <i class="fas fa-industry"></i>
+            {{ form.data_type|as_crispy_field }}
             <button type="submit" class="btn"> Search </button>
         </form>
     </div>

@@ -125,7 +125,7 @@ body {
 }
 
 .container {
-  padding-top: 2rem;
+  padding-top: 17rem;
   padding-bottom: 2rem;
 }
 
@@ -146,12 +146,6 @@ h1 {
   font-weight: 550;
 }
 
-
-#div_id_type label {
-  display: flex;
-  flex-direction: row; /* Corrected property name */
-}
-
 .search-form input {
     width: 100%;
     padding: 12px;
@@ -164,4 +158,14 @@ h1 {
 .search-form input:focus {
     border-color: var(--accent);
     outline: none;
+}
+
+.form-select {
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+}
+
+.form-select:focus {
+  border-color: var(--accent);
+  outline: none;
 }
