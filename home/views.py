@@ -65,22 +65,8 @@ def home(request):
     else:
       title = "Sunlight Exposure"
       y_label = "UV Index"
-    plt.figure(figsize=(12, 6))
-    plt.plot(hourly_dataframe["date"], hourly_dataframe["temperature_2m"], marker='o', linestyle='-', color='b', markersize=3)
-    plt.xlabel("Time (UTC)")
-    plt.ylabel(y_label)
-    plt.title(title)
-    plt.xticks(rotation=45, fontsize=8)
-    plt.grid(True)
-
-
-    image_path = "home/static/temperature_plot.png"
-
-    plt.savefig(image_path, bbox_inches="tight")
-    plt.close()
-
-
-
+    dates = hourly_dataframe["date"].dt.strftime('%Y-%m-%d %H:%M').tolist()
+    values = hourly_dataframe["temperature_2m"].tolist()
 
   #----------------------------------------------------------
   form = homeForm()
@@ -111,7 +97,13 @@ def home(request):
           make_graph("snowfall")
         case _:
           print("Nothing")
-      return render(request, "results/results.html", {"form": form, "image_path": "/static/temperature_plot.png"})
+      return render(request, "results/results.html", {
+        "form": form,
+        "dates": dates,
+        "values": values,
+        "y_label": y_label,
+        "title": title
+      })
     else:
       return render(request, "home/home.html", {"form": form}) 
   else:
