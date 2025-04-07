@@ -7,43 +7,45 @@
     <h2>Daily Forecast</h2>
     <canvas id="weatherChart"></canvas>
 </div>
-<script>
-const ctx = document.getElementById('weatherChart');
-new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: {{ dates|safe }},
-        datasets: [{
-            label: '{{ y_label }}',
-            data: {{ values|safe }},
-            borderColor: 'rgb(75, 192, 192)',
-            tension: 0.1
-        }]
-    },
-    options: {
-        responsive: true,
-        scales: {
-            y: {
-                beginAtZero: false,
-                title: {
-                    display: true,
-                    text: '{{ y_label }}'
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('weatherChart');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: {{ dates|safe }},
+            datasets: [{
+                label: '{{ y_label }}',
+                data: {{ values|safe }},
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: false,
+                    title: {
+                        display: true,
+                        text: '{{ y_label }}'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Time (UTC)'
+                    }
                 }
             },
-            x: {
+            plugins: {
                 title: {
                     display: true,
-                    text: 'Time (UTC)'
+                    text: '{{ title }}'
                 }
             }
-        },
-        plugins: {
-            title: {
-                display: true,
-                text: '{{ title }}'
-            }
         }
-    }
+    });
 });
 </script>
 {% endblock %}
