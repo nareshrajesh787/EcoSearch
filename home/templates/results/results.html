@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 zoom: {
                     pan: {
                         enabled: true,
-                        mode: 'x'
+                        mode: 'x',
+                        modifierKey: null
                     },
                     zoom: {
                         wheel: {
@@ -55,11 +56,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         pinch: {
                             enabled: true
                         },
-                        mode: 'x'
+                        mode: 'x',
+                        drag: {
+                            enabled: true
+                        }
                     }
                 }
             }
-        }
+        },
+        plugins: [ChartZoom]
     });
 });
 </script>
