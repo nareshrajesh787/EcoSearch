@@ -47,19 +47,22 @@ document.addEventListener('DOMContentLoaded', function() {
                     pan: {
                         enabled: true,
                         mode: 'x',
-                        modifierKey: null
+                        modifierKey: null,
+                        overScaleMode: 'x'
                     },
                     zoom: {
                         wheel: {
-                            enabled: true
+                            enabled: true,
+                            speed: 0.1
                         },
                         pinch: {
                             enabled: true
                         },
                         mode: 'x',
-                        drag: {
-                            enabled: true
-                        }
+                        overScaleMode: 'x'
+                    },
+                    limits: {
+                        x: {min: 'original', max: 'original'}
                     }
                 }
             }
