@@ -18,6 +18,7 @@ def home(request):
   title = None
   
   def make_graph(id):
+    nonlocal dates, values, y_label, title
     """
     IDs:
       Temperature: temperature_2m
@@ -70,7 +71,6 @@ def home(request):
     else:
       title = "Sunlight Exposure"
       y_label = "UV Index"
-    nonlocal dates, values, y_label, title
     dates = hourly_dataframe["date"].dt.strftime('%Y-%m-%d %H:%M').tolist()
     values = hourly_dataframe["temperature_2m"].tolist()
 
