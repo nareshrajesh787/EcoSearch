@@ -12,6 +12,11 @@ import matplotlib.pyplot as plt
 import os
 
 def home(request):
+  dates = None
+  values = None
+  y_label = None
+  title = None
+  
   def make_graph(id):
     """
     IDs:
@@ -65,6 +70,7 @@ def home(request):
     else:
       title = "Sunlight Exposure"
       y_label = "UV Index"
+    nonlocal dates, values, y_label, title
     dates = hourly_dataframe["date"].dt.strftime('%Y-%m-%d %H:%M').tolist()
     values = hourly_dataframe["temperature_2m"].tolist()
 
